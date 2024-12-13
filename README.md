@@ -2,6 +2,10 @@
 
 Intro/Banner image
 
+**Frontend Repo Link:** https://github.com/Vinyl-Vibe/vinyl-vibe-frontend
+
+**Backend Repo Link:** https://github.com/Vinyl-Vibe/vinyl-vibe-backend
+
 <br>
 
 ## Table of Contents
