@@ -109,6 +109,322 @@ Diego has been extremely impressed with the Vinyl Vibe website. He no longer has
  
 <br>
 
+*** 
+## API Endpoints
+This section provides detailed information about the available API endpoints, their usage, and expected responses.
+
+<br>
+
+### Auth Routes:
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|---------------|------------------|
+| Register a new user | `/auth/register` | POST | null | null |
+
+<br>
+
+**Example Request Body**:
+```json
+{
+  "email": "test101@example.com",
+  "password": "password123"
+}
+```
+**Example Success Response** (201 Created):
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9....",
+  "user": {
+    "id": "6766a7f3ef7cd743418164f8",
+    "email": "test101@example.com",
+    "role": "user"
+  }
+}
+```
+
+<br>
+
+**Error Responses**:
+
+- 400 Bad request:
+
+```json
+{
+  "status": "fail",
+  "error": {
+    "statusCode": 400,
+    "status": "fail",
+    "isOperational": true
+  },
+  "message": "User already exists",
+  "stack": {STACK_DATA}
+}
+```
+```json
+{
+  "status": "fail",
+  "error": {
+    "statusCode": 400,
+    "status": "fail",
+    "isOperational": true
+  },
+  "message": "Email and password are required",
+  "stack": {STACK_DATA}
+}
+```
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| User login | `/auth/login` | POST | JWT in header | null |
+
+<br>
+
+**Example Request Body**:
+  ```json
+  {
+    "username": "damian@example",
+    "password": "password123"
+  }
+  ```
+
+<br>
+
+**Example Success Response** (201 Created):
+  ```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..........",
+  "user": {
+    "id": "675be0befe6e8441a443e11b",
+    "email": "damian@example.com",
+    "role": "admin"
+    }
+}
+  ```
+
+<br>
+
+**Error Responses**:
+  
+  - 400 Bad Request:
+
+```json
+{
+  "status": "fail",
+  "error": {
+    "statusCode": 401,
+    "status": "fail",
+    "isOperational": true
+  },
+  "message": "Invalid credentials",
+  "stack": {STACK_DATA}
+}
+```
+
+<br>
+
+---
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get current users account | `/auth/me` | POST | JWT in header | null |
+
+**Example Request Body**
+
+Bearer Token inheritted 
+
+<br>
+
+**Example Success Response** (201 Created):
+  ```json
+{
+  "user": {
+    "id": "675be0befe6e8441a443e11b",
+    "email": "damian@example.com",
+    "role": "admin",
+    "profile": {
+      "address": {},
+      "firstName": "Damian",
+      "lastName": "Petrov"
+    },
+    "socialLogins": [],
+    "createdAt": "2024-12-13T07:22:38.291Z",
+    "updatedAt": "2024-12-19T12:50:48.145Z"
+  }
+}
+  ```
+
+
+### Cart Routes
+
+---
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get current user's cart | `/carts/me` | GET | JWT in header | null |
+
+**Example of successful response**
+```json
+{
+  "status": "success",
+  "cart": {
+    "_id": "6766921332d3cebf4d98e813",
+    "user": {
+      "id": "675be0befe6e8441a443e11b",
+      "email": "damian@example.com"
+    },
+    "products": [
+      {
+        "product": {
+          "id": "675ad9b77d85749f98a8568c",
+          "name": "Galactaphonic",
+          "price": 39.99,
+          "type": "vinyl",
+          "thumbnail": ""
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2024-12-21T10:01:55.498Z",
+    "updatedAt": "2024-12-21T10:01:55.498Z"
+  }
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all user's carts | `/carts` | GET | JWT in header | ADMIN |
+
+<br>
+
+**Example Success Response - 200 OK**
+
+```json
+{
+  "status": "success",
+  "carts": [
+    {
+      "_id": "6765647589fd56601033b9a4",
+      "user": {
+        "id": "676529c020b6a63cfbad0c6d",
+        "email": "niaali@example.com"
+      },
+      "products": [
+        {
+          "product": {
+            "id": "675aed497d85749f98a856c3",
+            "name": "Audio-Technica AT618a Disc Stabilizer",
+            "price": 59,
+            "type": "accessory",
+            "thumbnail": ""
+          },
+          "quantity": 2
+        }
+      ],
+      "createdAt": "2024-12-20T12:35:01.581Z",
+      "updatedAt": "2024-12-20T12:35:01.581Z"
+    },
+    {
+      "_id": "676564a389fd56601033b9b3",
+      "user": {
+        "id": "67652a1920b6a63cfbad0ca3",
+        "email": "barbaragarcia@example.com"
+      },
+      "products": [
+        {
+          "product": {
+            "id": "676127e8303f21258a4e6685",
+            "name": "Bottle Openner",
+            "price": 5,
+            "type": "merch"
+          },
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2024-12-20T12:35:47.977Z",
+      "updatedAt": "2024-12-20T12:35:47.977Z"
+    }
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Add item to current users cart | `/carts` | POST | JWT in header | `productId`, `quantity` |
+
+<br>
+
+**Example Request Body**
+```json
+  {
+      "productId": "675af09e7d85749f98a856cd",
+      "quantity": 1
+  }
+```
+
+**Example Success Response - 200 OK**
+
+```json
+{
+  "status": "success",
+  "cart": {
+    "_id": "6766921332d3cebf4d98e813",
+    "user": {
+      "id": "675be0befe6e8441a443e11b",
+      "email": "damian@example.com"
+    },
+    "products": [
+      {
+        "product": {
+          "id": "675af09e7d85749f98a856cd",
+          "name": "Ivy and the Big Apples",
+          "price": 39.99,
+          "type": "vinyl",
+          "thumbnail": ""
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2024-12-21T10:01:55.498Z",
+    "updatedAt": "2024-12-21T12:31:01.163Z"
+  }
+}
+```
+
 ***
 ## Testing
 
