@@ -17,12 +17,6 @@ Intro/Banner image
 
 <br>
 
--   [Presentation]()
-    -   [Slide Deck]()
-
-
-<br>
-
 -   [Testing]()
     -   [Manual (Dev & Prod)]()
     -   [Programmatic (Dev & Prod)]()
@@ -101,7 +95,7 @@ Ruby has been extremely pleased with the Admin Dashboard. She can now track sale
 ![User Story 3](docs/user-stories/user-story-short-3.png)
 
 
-Reflection 3
+### Reflection 3
 
 Atticus is now able to keep up-to-date with what is in stock at Vinyl Vibe and can make regular orders from the convenience of his phone.  Now that there is an easy system to catalogue Norm's vast collection of hard to find Australian records, Atticus has been on a bit of a spending spree. Turns out Norm had many of the records that Atticus had been seeking for his collection for many years, sitting in milk crates out the back of his shop, unadvertised! Atticus has been able to expand his record collection quickly, with rare and hard to find records. He now regularly recommends Vinyl Vibe to his fellow audiophiles and music collectors. This has bought considerably more customers into the shop, which has meant a growth in sales and market share. 
 <br>
@@ -109,12 +103,32 @@ Atticus is now able to keep up-to-date with what is in stock at Vinyl Vibe and c
 ### User 4
 ![User Story 4](docs/user-stories/user-story-short-4.png)
 
-Reflection 4
+### Reflection 4
 
 Diego has been extremely impressed with the Vinyl Vibe website. He no longer has to ring Norm at 3am (Seattle time) to see if he has particular records that his customers are looking for. He can just look on Norm's website. In an effort to improve their reciprocal business arrangement, Diego has now commissioned a website for his store, The Needle Drop, which will have all of the same functionality of the Vinyl Vibe site, but with his own branding on it. Now when he rings Norm, its just to reminisce about the good old days when they used to tour together as Roadies. 
  
 <br>
 
+***
+## Testing
+
+***
+
+## Deployment
+
+***
+
+## Maintainability and Scalability 
+
+***
+
+## Project Management
+
+***
+
+## Changes and Updates from Part A
+
+***
 
 
     
