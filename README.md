@@ -812,11 +812,71 @@ Bearer Token inheritted
 
 <br>
 
-**Example Body Request**
+**Example Request URL**
+
+```http://{{base_url}}/users/67652626a3f919022a023ebf```
+
+
+**Example Success Response**
+
+```204 indicates successful deletion with no content returned```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Update current user's profile | `/user/profile` | GET | JWT in header | profile |
+
+
+<br>
+
+
+**Example Success Response**
 
 ```json
 {
-  "role": "admin"
+  "_id": "675be0befe6e8441a443e11b",
+  "email": "damian@example.com",
+  "role": "admin",
+  "profile": {
+    "firstName": "Damian",
+    "lastName": "Petrov"
+  },
+  "socialLogins": [],
+  "createdAt": "2024-12-13T07:22:38.291Z",
+  "updatedAt": "2024-12-21T15:12:53.103Z"
+}
+```
+
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Update current user's profile | `/user/profile` | PATCH | JWT in header | profile |
+
+
+<br>
+
+**Example Request Body**
+
+```json
+{
+  "firstName": "NewName"
 }
 ```
 
@@ -825,17 +885,20 @@ Bearer Token inheritted
 
 ```json
 {
-  "_id": "67652882305df4e667237ab7",
-  "email": "amanda.brown@yahoo.com",
+  "_id": "675be0befe6e8441a443e11b",
+  "email": "damian@example.com",
   "role": "admin",
   "profile": {
-    "firstName": "Amanda",
-    "lastName": "Brown"
+    "firstName": "NewName",
+    "lastName": "Petrov"
   },
   "socialLogins": [],
-  "createdAt": "2024-12-20T08:19:14.522Z",
-  "updatedAt": "2024-12-21T15:05:59.644Z"
+  "createdAt": "2024-12-13T07:22:38.291Z",
+  "updatedAt": "2024-12-21T15:12:53.103Z"
 }
+```
+
+<br>
 
 
 ***
