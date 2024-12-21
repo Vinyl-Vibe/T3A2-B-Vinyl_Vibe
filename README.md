@@ -234,6 +234,156 @@ This section provides detailed information about the available API endpoints, th
 ```
 
 <br>
+<br>
+
+---
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Request Password Reset Link | `/auth/forgot-password` | POST | JWT in header | email |
+
+
+<br>
+
+**Example Request Body**:
+  ```json
+{
+  "email": "damian@example.com"
+}
+  ```
+<br>
+
+**Example Success Response**:
+```json
+{
+    "status": "success",
+    "message": "If an account exists with that email, a password reset link has been sent.",
+}
+```
+
+<br>
+
+**Example of Error Response**:
+```json
+{
+  "status": "error",
+  "error": {
+    "statusCode": 500,
+    "status": "error",
+    "isOperational": true
+  },
+  "message": "Error updating user: Cannot read properties of undefined (reading 'role')",
+  "stack": {STACK_DATA}
+}
+```
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Request Password Reset Link | `/auth/reset-password` | POST | JWT in header | email |
+
+
+<br>
+
+**Example Request Body**:
+  ```json
+{
+  "token": "reset_token_from_email",
+  "newPassword": "newPassword123"
+}
+  ```
+<br>
+
+**Example Success Response**:
+```json
+{
+    "status": "success",
+    "message": "Password successfully reset",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.....",
+    "user": {
+        "id": "675be0befe6e8441a443e11b",
+        "email": "damian@example.com",
+        "role": "admin",
+    }
+}
+```
+
+<br>
+
+**Example of Error Response**:
+```json
+{
+  "status": "error",
+  "error": {
+    "statusCode": 400,
+    "status": "error",
+    "isOperational": true
+  },
+  "message": "Reset link has expired or is invalid. Please request a new password reset.",
+  "stack": {STACK_DATA}
+}
+```
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| User logout| `/auth/logout` | POST | JWT in header | null |
+
+
+<br>
+
+**Example Success Response** (200 Created):
+  ```json
+{
+  "message": "Logged out successfully"
+}
+  ```
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Refresh Token| `/auth/refresh` | POST | JWT in header | null |
+
+
+<br>
+
+**Example Success Response** (200 Created):
+  ```json
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpGM3Ed.....",
+    "user": {
+        "id": "675be0befe6e8441a443e11b",
+        "email": "damian@example.com",
+        "role": "admin",
+    },
+}
+  ```
+
+
+<br>
 
 ---
 
@@ -424,6 +574,269 @@ Bearer Token inheritted
   }
 }
 ```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Update item quantity in current user's cart | `/carts/<productId>` | POST | JWT in header | `quantity` |
+
+<br>
+
+**Example Request Body**
+```json
+  {
+      "quantity": 2
+  }
+```
+
+<br>
+
+**Example Success Response**
+
+```json
+{
+  "status": "success",
+  "cart": {
+    "_id": "6766921332d3cebf4d98e813",
+    "user": {
+      "id": "675be0befe6e8441a443e11b",
+      "email": "damian@example.com"
+    },
+    "products": [
+      {
+        "product": {
+          "id": "675ad9b77d85749f98a8568c",
+          "name": "Galactaphonic",
+          "price": 39.99,
+          "type": "vinyl",
+          "thumbnail": ""
+        },
+        "quantity": 2
+      },
+    ],
+    "createdAt": "2024-12-21T10:01:55.498Z",
+    "updatedAt": "2024-12-21T14:22:04.886Z"
+  }
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Remove item from current user's cart | `/carts/<productId>` | DELETE | JWT in header | `productId` |
+
+**Example Request URL**
+
+```http://{{base_url}}/carts/675ad9b77d85749f98a8568c```
+<br>
+
+**Example Success Response**
+
+```json
+{
+  "status": "success",
+  "message": "Product removed from cart",
+  "cart": {
+    "_id": "6766921332d3cebf4d98e813",
+    "user": {
+      "id": "675be0befe6e8441a443e11b",
+      "email": "damian@example.com"
+    },
+    "products": [
+      {
+        "product": {
+          "id": "675af09e7d85749f98a856cd",
+          "name": "Ivy and the Big Apples",
+          "price": 39.99,
+          "type": "vinyl",
+          "thumbnail": ""
+        },
+        "quantity": 1
+      }
+    ],
+    "createdAt": "2024-12-21T10:01:55.498Z",
+    "updatedAt": "2024-12-21T14:24:23.408Z"
+  }
+}
+```
+
+
+
+### Users
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all users | `/users` | GET | JWT in header | null |
+
+
+**Example Success Response**
+
+```json
+  {
+    "_id": "676529fd20b6a63cfbad0c9d",
+    "email": "aaliyahsuleiman@example.com",
+    "role": "user",
+    "createdAt": "2024-12-20T08:25:33.187Z",
+    "updatedAt": "2024-12-20T08:25:33.187Z"
+  },
+  {
+    "_id": "67652882305df4e667237ab7",
+    "email": "amanda.brown@yahoo.com",
+    "role": "user",
+    "profile": {
+      "firstName": "Amanda",
+      "lastName": "Brown"
+    },
+    "createdAt": "2024-12-20T08:19:14.522Z",
+    "updatedAt": "2024-12-20T08:19:44.208Z"
+  },
+  {
+    "_id": "67652626a3f919022a023ebf",
+    "email": "amanda.moore@gmail.com",
+    "role": "user",
+    "createdAt": "2024-12-20T08:09:10.870Z",
+    "updatedAt": "2024-12-20T08:09:10.870Z"
+  },
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all users | `/user/<userId>` | GET | JWT in header | null |
+
+
+<br>
+
+**Example Request URL**
+
+```http://{{base_url}}/users/67652626a3f919022a023ebf```
+
+
+**Example Success Response**
+
+```json
+{
+  "_id": "67652626a3f919022a023ebf",
+  "email": "amanda.moore@gmail.com",
+  "role": "user",
+  "socialLogins": [],
+  "createdAt": "2024-12-20T08:09:10.870Z",
+  "updatedAt": "2024-12-20T08:09:10.870Z"
+}
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Update user ID | `/user/<userId>` | PATCH | JWT in header | email, role |
+
+
+<br>
+
+**Example Body Request**
+
+```json
+{
+  "role": "admin"
+}
+```
+
+
+**Example Success Response**
+
+```json
+{
+  "_id": "67652882305df4e667237ab7",
+  "email": "amanda.brown@yahoo.com",
+  "role": "admin",
+  "profile": {
+    "firstName": "Amanda",
+    "lastName": "Brown"
+  },
+  "socialLogins": [],
+  "createdAt": "2024-12-20T08:19:14.522Z",
+  "updatedAt": "2024-12-21T15:05:59.644Z"
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Delete user by ID | `/user/<userId>` | DELETE | JWT in header | userId |
+
+
+<br>
+
+**Example Body Request**
+
+```json
+{
+  "role": "admin"
+}
+```
+
+
+**Example Success Response**
+
+```json
+{
+  "_id": "67652882305df4e667237ab7",
+  "email": "amanda.brown@yahoo.com",
+  "role": "admin",
+  "profile": {
+    "firstName": "Amanda",
+    "lastName": "Brown"
+  },
+  "socialLogins": [],
+  "createdAt": "2024-12-20T08:19:14.522Z",
+  "updatedAt": "2024-12-21T15:05:59.644Z"
+}
+
 
 ***
 ## Testing
