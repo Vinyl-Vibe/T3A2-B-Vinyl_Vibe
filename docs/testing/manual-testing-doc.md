@@ -122,17 +122,33 @@ Vinyl Vibe App
 - **Persona**: Admin user
 - **Test Steps**:
   1. Navigate to the homepage.
-  2. 
-  3. 
+  2. Navigate to Admin Dashboard (via hamburger menu top right)
+  3. View Dashboard overview
+  4. View Orders 
+  - "View details" of an order
+  - Edit order status via dropdown menu 
+  - View all order and customer details
+  5. Navigate to Products section 
+  - "View/Edit" a product
+  - Check all areas can be edited
+  6. Navigate to Customers section
+  - "View Details" on a customer
+  - Option to view customers previous orders
+  - Option to change user role to user/admin
+  7. Return to store (button top right)
+
 - **Expected Result**:
-  - F
-  - U
+  - Navigate through Admin dashboard
+  - View a Dashboard of the general website/sales data
+  - View/edit extra details for Orders, Products and Customer sections
 - **Actual Result**:
-  - 
+  - Admin dashboard was easy to find via navigation menu
+  - Orders, Products and Customers section all visible with extra viewing/edit options for each section.
+  - Admin dashboard shows a general overview of the key store data
 - **Feedback**:
-  - 
-- **Status**: 
-- **Notes**: 
+  - Option to delete a standard user role and all of its data
+- **Status**: Passed
+- **Notes**: Could add delete standard user in admin dashboard customer section via "View Details".
 
 ### Summary
 
