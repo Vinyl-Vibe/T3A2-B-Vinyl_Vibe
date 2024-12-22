@@ -12,10 +12,18 @@ Intro/Banner image
 
 ## Table of Contents
 
--   [App Functionality]()
-    -   [List]()
-    -   [Meets client needs]()
+-   [App Functionality](#features-and-functionality)
+    -   [Meets client needs](#how-it-meets-client-needs)
 
+
+<br>
+
+-   [API Endpoints](#api-endpoints)
+    -   [Auth Routes](#auth-routes)
+    -   [Cart Routes](#cart-routes)
+    -   [Users Routes](#users-routes)
+    -   [Orders Routes](#orders)
+    -   [Products Routes](#products)
 
 <br>
 
@@ -126,6 +134,9 @@ This section provides detailed information about the available API endpoints, th
 <br>
 <br>
 
+<details>
+<summary><strong>Register a new user</strong></summary>
+
 | FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
 |----------|------|--------|---------------|------------------|
 | Register a new user | `/auth/register` | POST | null | null |
@@ -181,6 +192,11 @@ This section provides detailed information about the available API endpoints, th
   "stack": {STACK_DATA}
 }
 ```
+</details>
+
+
+<details>
+<summary><strong>User login</strong></summary>
 <br>
 <br>
 
@@ -235,7 +251,10 @@ This section provides detailed information about the available API endpoints, th
   "stack": {STACK_DATA}
 }
 ```
+</details>
 
+<details>
+<summary><strong>Forgot Password</strong></summary>
 <br>
 <br>
 
@@ -282,6 +301,10 @@ This section provides detailed information about the available API endpoints, th
   "stack": {STACK_DATA}
 }
 ```
+</details>
+
+<details>
+<summary><strong>Reset Password</strong></summary>
 <br>
 <br>
 
@@ -335,7 +358,11 @@ This section provides detailed information about the available API endpoints, th
   "stack": {STACK_DATA}
 }
 ```
+</details>
 
+
+<details>
+<summary><strong>Logout</strong></summary>
 <br>
 <br>
 
@@ -357,6 +384,10 @@ This section provides detailed information about the available API endpoints, th
   "message": "Logged out successfully"
 }
   ```
+</details>
+
+<details>
+<summary><strong>Auth Refresh</strong></summary>
 
 <br>
 <br>
@@ -384,8 +415,10 @@ This section provides detailed information about the available API endpoints, th
     },
 }
   ```
+</details>
 
-
+<details>
+<summary><strong>Get current user account</strong></summary>
 <br>
 
 ---
@@ -421,11 +454,15 @@ Bearer Token inheritted
   }
 }
   ```
+  </details>
 
 
 ### Cart Routes
 
 ---
+
+<details>
+<summary><strong>Get current user's cart</strong></summary>
 
 <br>
 <br>
@@ -461,6 +498,10 @@ Bearer Token inheritted
   }
 }
 ```
+</details>
+
+<details>
+<summary><strong>Get All user's carts</strong></summary>
 <br>
 <br>
 
@@ -526,6 +567,11 @@ Bearer Token inheritted
   ]
 }
 ```
+</details>
+
+<details>
+<summary><strong>Add an item to current users cart</strong></summary>
+
 <br>
 <br>
 
@@ -577,6 +623,10 @@ Bearer Token inheritted
   }
 }
 ```
+</details>
+
+<details>
+<summary><strong>Update Item Quantity</strong></summary>
 <br>
 <br>
 
@@ -629,6 +679,10 @@ Bearer Token inheritted
   }
 }
 ```
+</details>
+
+<details>
+<summary><strong>Remove Item from Cart</strong></summary>
 <br>
 <br>
 
@@ -676,7 +730,12 @@ Bearer Token inheritted
   }
 }
 ```
-### Users
+</details>
+<br>
+
+***
+
+### Users Routes
 <br>
 <br>
 
