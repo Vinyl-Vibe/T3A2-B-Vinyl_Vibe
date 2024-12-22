@@ -33,23 +33,23 @@
 
 <br>
 
--   [Deployment]()
+-   [Deployment](#deployment)
     -   [Client]()
     -   [Server (env var)]()
     -   [Database (local, prod)]()
 
 <br>
 
--   [Maintainability & Scalability]()
+-   [Maintainability & Scalability](#maintainability-and-scalability)
     -   [Project Directory]()
 
 <br>
 
--   [Project Management (Trello)]()
+-   [Project Management (Trello)](#project-management)
     -   [Planning Methodology/intro]()
-    -   [Team Members (Strength & Weaknesses for task assignments)]()
-    -   [Trello breakdown - labels, difficulty level, git commit links)]()
-    -   [Trello screenshots)]()
+    -   [Team Members (Strength & Weaknesses for task assignments)](#team-members-strengths-weaknesses-and-task-assignments)
+    -   [Trello breakdown - labels, difficulty level, git commit links)](#trello-breakdown)
+    -   [Trello screenshots)](#)
 
 <br>
 
@@ -2959,6 +2959,12 @@ https://vinylvibe.live/
 <br>
 
 ## Maintainability and Scalability 
+In the MERN stack application Vinyl Vibe we've been refining over the past weeks, significant emphasis has been placed on ensuring both maintainability and scalability. The backend, built with Node.js and Express, leverages a modular architecture that simplifies updates and the integration of new features. We structured the application with clear separation of concerns, utilising MVC patterns to enhance readability and ease of maintenance. 
+
+For the frontend, React’s component-based structure allows for reusable UI components, which streamlines development and debugging processes. 
+
+Scalability has been addressed by implementing efficient database indexing and query optimisation in MongoDB, ensuring that the application performs well under varying loads. This design not only supports a growing user base but also adapts seamlessly to increasing data volumes, demonstrating a robust approach to both current and future needs.
+
 
 <br>
 
