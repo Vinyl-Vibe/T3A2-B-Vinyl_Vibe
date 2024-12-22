@@ -36,6 +36,10 @@ This introduction highlights the purpose, features, and technical foundation of 
 
 <br>
 
+-   [Presentation](/docs/presentation/Vinyl%20Vibe%20Presso.pdf)
+
+<br>
+
 -   [API Endpoints](#api-endpoints)
     -   [Auth Routes](#auth-routes)
     -   [Cart Routes](#cart-routes)
