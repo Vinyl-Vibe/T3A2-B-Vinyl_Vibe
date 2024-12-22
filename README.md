@@ -738,6 +738,10 @@ Bearer Token inheritted
 
 ### Users Routes
 
+***
+
+
+
 <details>
 <summary><strong>Get All Users</strong></summary>
 <br>
@@ -978,10 +982,14 @@ Bearer Token inheritted
 
 
 <br>
+
 ***
 
 
 ## Orders
+
+<details>
+<summary><strong>Get All Orders</strong></summary>
 <br>
 <br>
 
@@ -1063,6 +1071,10 @@ Bearer Token inheritted
   ]
 }
 ```
+</details>
+
+<details>
+<summary><strong>Get All Orders Paginated</strong></summary>
 <br>
 <br>
 
@@ -1074,7 +1086,7 @@ Bearer Token inheritted
 
 | FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
 |----------|------|--------|----------------|------------------|
-| Get all orders | `/orders?page=<page>&limit=<limit>` | GET | JWT in header | page, limit |
+| Get all orders paginated | `/orders?page=<page>&limit=<limit>` | GET | JWT in header | page, limit |
 
 
 <br>
@@ -1156,6 +1168,10 @@ NB: shortened for brevity
   ]
 }...
 ```
+</details>
+
+<details>
+<summary><strong>Get My Orders</strong></summary>
 <br>
 <br>
 
@@ -1237,6 +1253,10 @@ NB: shortened for brevity
   ]
 }...
 ```
+</details>
+
+<details>
+<summary><strong>Create Stripe Checkout with Order</strong></summary>
 <br>
 <br>
 
@@ -1314,6 +1334,10 @@ NB: shortened for brevity
   "checkoutUrl": {CHECKOUT_URL}
 }
 ```
+</details>
+
+<details>
+<summary><strong>Create New Order</strong></summary>
 <br>
 <br>
 
@@ -1385,6 +1409,10 @@ NB: shortened for brevity
   "checkoutUrl": {CHECKOUT_URL}
 }
 ```
+</details>
+
+<details>
+<summary><strong>Update Order</strong></summary>
 <br>
 <br>
 
@@ -1396,7 +1424,7 @@ NB: shortened for brevity
 
 | FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
 |----------|------|--------|----------------|------------------|
-| Create new Order | `/orders/<order number>` | PATCH | JWT in header | status |
+| Update Order| `/orders/<order number>` | PATCH | JWT in header | status |
 
 
 <br>
@@ -1450,7 +1478,10 @@ NB: shortened for brevity
   }
 }
 ```
+</details>
 
+<details>
+<summary><strong>Delete and Order by Id</strong></summary>
 <br>
 <br>
 
@@ -1490,7 +1521,10 @@ NB: shortened for brevity
   "stack": {STACK_DATA}
 }
 ```
+</details>
 
+<details>
+<summary><strong>Get and Order by Id</strong></summary>
 <br>
 <br>
 
@@ -1502,7 +1536,7 @@ NB: shortened for brevity
 
 | FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
 |----------|------|--------|----------------|------------------|
-| Delete an Order by ID | `/orders/<userId>` | GET | JWT in header | status |
+| Get an Order by ID | `/orders/<userId>` | GET | JWT in header | status |
 
 
 
@@ -1642,6 +1676,10 @@ NB: Shortened for brevity
   ]
 }...
 ```
+</details>
+
+<details>
+<summary><strong>Get Order by Status</strong></summary>
 <br>
 <br>
 
@@ -1790,6 +1828,10 @@ NB: shortened for brevity
   ]
 }...
 ```
+</details>
+
+<details>
+<summary><strong>Get Orders by Date Range</strong></summary>
 <br>
 <br>
 
@@ -1883,6 +1925,10 @@ NB: shortened for brevity
   ]
 }  
 ```
+</details>
+
+<details>
+<summary><strong>Get Orders by Status and Date Range</strong></summary>
 <br>
 <br>
 
@@ -1977,7 +2023,13 @@ NB: shortened for brevity
   ]
 }
 ```
+</details>
+
+***
+
 ## Products
+
+***
 
 <br>
 <br>
