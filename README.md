@@ -28,8 +28,8 @@
 <br>
 
 -   [Testing](#testing)
-    -   [Manual (Dev & Prod)]()
-    -   [Programmatic (Dev & Prod)]()
+    -   [Manual (Dev & Prod)](#manual-testing)
+    -   [Programmatic (Dev & Prod)](#programatic-testing-using-jest)
 
 <br>
 
@@ -2940,9 +2940,16 @@ NB: shortened for brevity
 
 ## Testing
 
+### Manual Testing
+
 Testing for the App can be found here:
-![testing](/docs/testing/manual-testing-doc.md)
+    - [testing](/docs/testing/manual-testing-doc.md)
 We have created both an Admin user and a non-Admin user for testing.
+
+### Programatic Testing using Jest
+
+In Vinyl Vibe, we implemented Jest for programmatic testing to ensure robust and reliable application functionality. This testing framework allowed us to create and run automated tests, significantly improving code quality and reducing debugging time.
+
 
 <br>
 
@@ -2965,6 +2972,29 @@ For the frontend, React’s component-based structure allows for reusable UI com
 
 Scalability has been addressed by implementing efficient database indexing and query optimisation in MongoDB, ensuring that the application performs well under varying loads. This design not only supports a growing user base but also adapts seamlessly to increasing data volumes, demonstrating a robust approach to both current and future needs.
 
+---
+
+### Project Directories
+
+In Vinyl Vibe, we adopted a clear separation of concerns by dividing the application into distinct layers for the frontend, backend, and database operations. This separation enabled focused development and maintenance in each area, streamlining the workflow and enhancing overall system efficiency.
+
+
+
+<details>
+<summary>Frontend Architecture Overview</summary>
+
+![Frontend](/docs/scalability/frontend.png)
+
+</details>
+
+<details>
+<summary>Backend Architecture Overview</summary>
+
+![Backend](/docs/scalability/backend.png)
+
+</details>
+
+---
 
 <br>
 
