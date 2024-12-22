@@ -2966,6 +2966,9 @@ https://vinylvibe.live/
 
 This environment configuration for Vinyl Vibe sets up a robust development setup with Node.js, specifying ports and URLs for local development, and includes secure connections to multiple services. It integrates authentication via JWT and Google OAuth, MongoDB for database operations, Stripe for payments, Resend for email services, and Cloudinary for image storage, ensuring a comprehensive and secure user experience.
 
+<details>
+<summary>Environment Configuration</summary>
+
 ```javascript
 # Environment variables
 NODE_ENV=development
@@ -2996,7 +2999,7 @@ CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_UPLOAD_PRESET=your_upload_preset
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-```
+</details> 
 
 <br>
 
