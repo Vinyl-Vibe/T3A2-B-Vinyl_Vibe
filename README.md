@@ -27,7 +27,7 @@
 
 <br>
 
--   [Testing]()
+-   [Testing](#testing)
     -   [Manual (Dev & Prod)]()
     -   [Programmatic (Dev & Prod)]()
 
@@ -2940,9 +2940,21 @@ NB: shortened for brevity
 
 ## Testing
 
+Testing for the App can be found here:
+![testing](/docs/testing/manual-testing-doc.md)
+We have created both an Admin user and a non-Admin user for testing.
+
 <br>
 
 ## Deployment
+
+The backend of the website is deployed on Render
+
+The frontend of the website is delpoyed on Netlify
+
+The website is live at:
+
+https://vinylvibe.live/
 
 <br>
 
