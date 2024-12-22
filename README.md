@@ -41,15 +41,14 @@
 <br>
 
 -   [Maintainability & Scalability](#maintainability-and-scalability)
-    -   [Project Directory]()
+    -   [Project Directory](#project-directories)
 
 <br>
 
 -   [Project Management (Trello)](#project-management)
-    -   [Planning Methodology/intro]()
     -   [Team Members (Strength & Weaknesses for task assignments)](#team-members-strengths-weaknesses-and-task-assignments)
     -   [Trello breakdown - labels, difficulty level, git commit links)](#trello-breakdown)
-    -   [Trello screenshots)](#)
+
 
 <br>
 
