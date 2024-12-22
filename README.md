@@ -456,6 +456,7 @@ Bearer Token inheritted
   ```
   </details>
 
+***
 
 ### Cart Routes
 
@@ -736,6 +737,9 @@ Bearer Token inheritted
 ***
 
 ### Users Routes
+
+<details>
+<summary><strong>Get All Users</strong></summary>
 <br>
 <br>
 
@@ -778,7 +782,10 @@ Bearer Token inheritted
     "updatedAt": "2024-12-20T08:09:10.870Z"
   },
 ```
+</details>
 
+<details>
+<summary><strong>Get User by userId</strong></summary>
 <br>
 <br>
 
@@ -790,7 +797,7 @@ Bearer Token inheritted
 
 | FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
 |----------|------|--------|----------------|------------------|
-| Get all users | `/user/<userId>` | GET | JWT in header | null |
+| Get user by Id | `/user/<userId>` | GET | JWT in header | null |
 
 
 <br>
@@ -812,7 +819,10 @@ Bearer Token inheritted
   "updatedAt": "2024-12-20T08:09:10.870Z"
 }
 ```
+</details>
 
+<details>
+<summary><strong>Update UserId</strong></summary>
 <br>
 <br>
 
@@ -854,6 +864,10 @@ Bearer Token inheritted
   "updatedAt": "2024-12-21T15:05:59.644Z"
 }
 ```
+</details>
+
+<details>
+<summary><strong>Delete User</strong></summary>
 <br>
 <br>
 
@@ -878,7 +892,10 @@ Bearer Token inheritted
 **Example Success Response**
 
 ```204 indicates successful deletion with no content returned```
+</details>
 
+<details>
+<summary><strong>Get User Profile</strong></summary>
 <br>
 <br>
 
@@ -890,7 +907,7 @@ Bearer Token inheritted
 
 | FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
 |----------|------|--------|----------------|------------------|
-| Update current user's profile | `/user/profile` | GET | JWT in header | profile |
+| Get current user's profile | `/user/profile` | GET | JWT in header | profile |
 
 
 <br>
@@ -912,8 +929,10 @@ Bearer Token inheritted
   "updatedAt": "2024-12-21T15:12:53.103Z"
 }
 ```
+</details>
 
-
+<details>
+<summary><strong>Update User Profile</strong></summary>
 <br>
 <br>
 
@@ -955,8 +974,11 @@ Bearer Token inheritted
   "updatedAt": "2024-12-21T15:12:53.103Z"
 }
 ```
+</details>
+
 
 <br>
+***
 
 
 ## Orders
