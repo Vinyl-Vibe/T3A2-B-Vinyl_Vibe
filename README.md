@@ -54,8 +54,8 @@
 <br>
 
 -   [Changes & Updates to Plan (Part-A)](#changes-and-updates-from-part-a)
-    -   ![Part-A](#part-a)
-    <!-- -   [Link to Original Plan Document (Part-A)]() -->
+
+    -   [Link to Original Plan Document (Part-A)](/docs/Part-A.md)
 
 ---
 
