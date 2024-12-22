@@ -78,6 +78,7 @@ We determined the needs of the clients by establishing User Stories for the 4 ma
 ### User 1
 ![User Story 1](docs/user-stories/user-story-short-1.png)
 
+
 ### Reflection 1
 Norm's business now has a website that new customers feel comfortable purchasing from. They have a safe method of payment with Stripe integration. The modern branding is simple and unobtrusive, with just a touch of colour that draws the eye to the logo. The UI/UX is efficient and intuitive. He can now display his stock for sale in an efficient manner that has helped to improve sales. 
 
@@ -2745,6 +2746,31 @@ NB: shortened for brevity
 ***
 
 ## Project Management
+
+### Planning and Methodology
+
+<br>
+
+Planning for this task began with a brainstorming session where we broke down each step into task and put them in our Trello Board's backlog. Once the tasks were on Trello cards, we created todo's for our tasks in the form of checklists. 
+
+We made a rather extensive list of Extended Features that would be "nice to haves" we would do if time allowed. 
+
+<br>
+
+### Team Members Strengths, Weaknesses and Task Assignments
+
+Each of us brings a unique set of skills to the task, and we chose to capitalise on our strengths. 
+
+Damian's speciality is Frontend, so he handled Frontend development while Brad and Reece shared Backend development. Any and all of us were free to help one another on any task. Often a blocker just required a fresh set of eyes to fix it! 
+
+Reece comes from an education background, so he volunteered to do the Presenentation and Documentation. This meant that Brad did more of the Backend than Reece. 
+
+
+<br>
+
+### Trello Breakdown
+
+We tagged tasks based on their level of difficulty, frontend/backend, MVP Features/Extended Feature
 
 ***
 
