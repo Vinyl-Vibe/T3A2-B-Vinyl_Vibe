@@ -3116,6 +3116,7 @@ https://trello.com/b/lGrFjkAu/ca-ecommerce
 
 The only change we had to make from our original plan was that we had to host on Render instead of Vercel. This was because Vercel didn't allow us to deploy from a GitHub Organisation on the free tier. It only allowed for personal repos. Render allows this functionality, so we went with them instead. 
 
+[Link to Original Plan Document (Part-A)](/docs/Part-A.md)
 
 
 ---
