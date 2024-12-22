@@ -34,9 +34,8 @@
 <br>
 
 -   [Deployment](#deployment)
-    -   [Client]()
-    -   [Server (env var)]()
-    -   [Database (local, prod)]()
+    -   [Environment Variable](#environment-variable)
+
 
 <br>
 
