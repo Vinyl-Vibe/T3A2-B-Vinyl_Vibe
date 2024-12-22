@@ -2025,12 +2025,13 @@ NB: shortened for brevity
 ```
 </details>
 
-***
+---
 
 ## Products
 
-***
-
+---
+<details>
+<summary><strong>Search Products by Type</strong></summary>
 <br>
 <br>
 
@@ -2135,7 +2136,10 @@ NB: shortened for brevity
   ]
 }
 ```
+</details>
 
+<details>
+<summary><strong>Search Products by Price Range</strong></summary>
 <br>
 <br>
 
@@ -2241,6 +2245,10 @@ NB: shortened for brevity
   ]
 }
 ```
+</details>
+
+<details>
+<summary><strong>Search in-stock Products</strong></summary>
 <br>
 <br>
 
@@ -2344,6 +2352,10 @@ NB: shortened for brevity
   ]
 }
 ```
+</details>
+
+<details>
+<summary><strong>Search out-of-stock Products</strong></summary>
 <br>
 <br>
 
@@ -2396,6 +2408,10 @@ NB: shortened for brevity
   ]
 }
 ```
+</details>
+
+<details>
+<summary><strong>Sort and Order Products</strong></summary>
 <br>
 <br>
 
@@ -2562,6 +2578,11 @@ NB: shortened for brevity
   ]
 }
 ```
+
+</details>
+
+<details>
+<summary><strong>Get all Products with Pagination</strong></summary>
 <br>
 <br>
 
@@ -2622,6 +2643,10 @@ NB: shortened for brevity
   ]
 }
 ```
+</details>
+
+<details>
+<summary><strong>Get all Products</strong></summary>
 <br>
 <br>
 
@@ -2678,6 +2703,10 @@ NB: shortened for brevity
   ]
 }
 ```
+</details>
+
+<details>
+<summary><strong>Get Products by Product Id </strong></summary>
 
 <br>
 <br>
@@ -2722,6 +2751,11 @@ NB: shortened for brevity
   ]
 }
 ```
+
+</details>
+
+<details>
+<summary><strong>Create a Product</strong></summary>
 <br>
 <br>
 
@@ -2788,6 +2822,10 @@ NB: shortened for brevity
   }
 }
 ```
+</details>
+
+<details>
+<summary><strong>Update a Product</strong></summary>
 
 <br>
 <br>
@@ -2841,6 +2879,11 @@ NB: shortened for brevity
 }
 ```
 
+</details>
+
+<details>
+<summary><strong>Delete a Product by Id</strong></summary>
+
 <br>
 <br>
 
@@ -2866,6 +2909,8 @@ NB: shortened for brevity
   "message": "Product deleted successfully"
 }
 ```
+</details>
+
 
 <br>
 
