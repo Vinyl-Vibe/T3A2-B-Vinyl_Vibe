@@ -673,15 +673,11 @@ Bearer Token inheritted
   }
 }
 ```
-
-
-
 ### Users
 <br>
 <br>
 
 ---
-
 
 <br>
 <br>
@@ -899,6 +895,1007 @@ Bearer Token inheritted
 ```
 
 <br>
+
+
+## Orders
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all orders | `/orders` | GET | JWT in header | null |
+
+
+<br>
+
+**Example Success Response**
+
+```json
+{
+  "status": "success",
+  "orders": [
+    {
+      "_id": "6762d9d5a2c5237a0d528c76",
+      "userId": {
+        "_id": "675be0befe6e8441a443e11b",
+        "email": "damian@example.com",
+        "profile": {
+          "firstName": "Damian",
+          "lastName": "Petrov",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85685",
+            "name": "Abbey Road",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 8,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c77"
+        },
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85686",
+            "name": "Thriller",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 2,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c78"
+        }
+      ],
+      "total": 399.9,
+      "status": "shipped",
+      "createdAt": "2024-12-18T14:19:01.879Z",
+      "updatedAt": "2024-12-18T14:19:01.879Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all orders | `/orders?page=<page>&limit=<limit>` | GET | JWT in header | page, limit |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| page | 1 |
+| limit | 20 |
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "status": "success",
+  "orders": [
+    {
+      "_id": "6762d9d5a2c5237a0d528c76",
+      "userId": {
+        "_id": "675be0befe6e8441a443e11b",
+        "email": "damian@example.com",
+        "profile": {
+          "firstName": "Damian",
+          "lastName": "Petrov",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85685",
+            "name": "Abbey Road",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 8,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c77"
+        },
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85686",
+            "name": "Thriller",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 2,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c78"
+        }
+      ],
+      "total": 399.9,
+      "status": "shipped",
+      "createdAt": "2024-12-18T14:19:01.879Z",
+      "updatedAt": "2024-12-18T14:19:01.879Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+  ]
+}...
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all my orders | `/orders/me` | GET | JWT in header | null |
+
+
+<br>
+
+**Example Success Response**
+NB: shortened for brevity
+```json
+{
+  "status": "success",
+  "orders": [
+    {
+      "_id": "6762d9d5a2c5237a0d528c76",
+      "userId": {
+        "_id": "675be0befe6e8441a443e11b",
+        "email": "damian@example.com",
+        "profile": {
+          "firstName": "Damian",
+          "lastName": "Petrov",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85685",
+            "name": "Abbey Road",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 8,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c77"
+        },
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85686",
+            "name": "Thriller",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 2,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c78"
+        }
+      ],
+      "total": 399.9,
+      "status": "shipped",
+      "createdAt": "2024-12-18T14:19:01.879Z",
+      "updatedAt": "2024-12-18T14:19:01.879Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+  ]
+}...
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Create Stripe Checkout with Order | `/orders` | POST | JWT in header | null |
+
+
+<br>
+
+**Example Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Order created successfully",
+  "order": {
+    "_id": "6767496515a2cfb23a452e50",
+    "userId": {
+      "_id": "675be0befe6e8441a443e11b",
+      "email": "damian@example.com",
+      "profile": {
+        "address": {
+          "street": "123 Example Street",
+          "city": "Melbourne",
+          "state": "Victoria",
+          "postalCode": "3000",
+          "country": "Australia"
+        },
+        "firstName": "Damian",
+        "lastName": "Petrov",
+        "phoneNumber": "+61 400 123 456"
+      },
+      "socialLogins": []
+    },
+    "products": [
+      {
+        "productId": {
+          "_id": "675ad9b77d85749f98a85685",
+          "name": "Abbey Road",
+          "price": 39.99,
+          "description": "The Beatles' final studio masterpiece, featuring iconic harmonies, innovative production, and timeless classics that showcase their creative peak.",
+          "images": [],
+          "thumbnail": ""
+        },
+        "quantity": 8,
+        "price": 39.99,
+        "_id": "6767496515a2cfb23a452e51"
+      },
+      {
+        "productId": {
+          "_id": "675ad9b77d85749f98a85686",
+          "name": "Thriller",
+          "price": 39.99,
+          "description": "The best-selling album of all time, combining infectious pop, rock, and funk with groundbreaking production and Michael Jackson's unparalleled artistry.",
+          "images": [],
+          "thumbnail": ""
+        },
+        "quantity": 2,
+        "price": 39.99,
+        "_id": "6767496515a2cfb23a452e52"
+      }
+    ],
+    "total": 399.9,
+    "status": "pending",
+    "createdAt": "2024-12-21T23:04:05.137Z",
+    "updatedAt": "2024-12-21T23:04:05.137Z"
+  },
+  "checkoutUrl": {CHECKOUT_URL}
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Create new Order | `/orders` | POST | JWT in header | null |
+
+
+<br>
+
+**Example Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Order created successfully",
+  "order": {
+    "shippingAddress": {
+      "street": "123 Ready street",
+      "suburb": "Arundel",
+      "postcode": "4214",
+      "state": "Queensland",
+      "country": "Australia"
+    },
+    "_id": "67674a0215a2cfb23a452e5b",
+    "userId": {
+      "_id": "675be0befe6e8441a443e11b",
+      "email": "damian@example.com",
+      "profile": {
+        "address": {
+          "street": "123 Example Street",
+          "city": "Melbourne",
+          "state": "Victoria",
+          "postalCode": "3000",
+          "country": "Australia"
+        },
+        "firstName": "Damian",
+        "lastName": "Petrov",
+        "phoneNumber": "+61 400 123 456"
+      },
+      "socialLogins": []
+    },
+    "products": [
+      {
+        "productId": {
+          "_id": "675ad9b77d85749f98a85689",
+          "name": "Coughing Up a Storm",
+          "price": 39.99,
+          "description": "A fast, sarcastic, and rebellious debut album that established Frenzal Rhomb as one of Australia's quintessential punk rock bands.",
+          "images": [],
+          "thumbnail": ""
+        },
+        "quantity": 2,
+        "price": 39.99,
+        "_id": "67674a0215a2cfb23a452e5c"
+      }
+    ],
+    "total": 79.98,
+    "status": "pending",
+    "createdAt": "2024-12-21T23:06:42.015Z",
+    "updatedAt": "2024-12-21T23:06:42.015Z"
+  },
+  "checkoutUrl": {CHECKOUT_URL}
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Create new Order | `/orders/<order number>` | PATCH | JWT in header | status |
+
+
+<br>
+
+**Example Request Body**:
+
+```json
+{
+    "status": "shipped"
+}
+```
+
+<br>
+
+**Example Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Order updated successfully",
+  "order": {
+    "shippingAddress": {
+      "street": "123 Ready street",
+      "suburb": "Arundel",
+      "postcode": "4214",
+      "state": "Queensland",
+      "country": "Australia"
+    },
+    "_id": "67674a0215a2cfb23a452e5b",
+    "userId": {
+      "_id": "675be0befe6e8441a443e11b",
+      "email": "damian@example.com",
+      "socialLogins": []
+    },
+    "products": [
+      {
+        "productId": {
+          "_id": "675ad9b77d85749f98a85689",
+          "name": "Coughing Up a Storm",
+          "price": 39.99
+        },
+        "quantity": 2,
+        "price": 39.99,
+        "_id": "67674a0215a2cfb23a452e5c"
+      }
+    ],
+    "total": 79.98,
+    "status": "shipped",
+    "createdAt": "2024-12-21T23:06:42.015Z",
+    "updatedAt": "2024-12-21T23:10:50.956Z"
+  }
+}
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Delete an Order by ID | `/orders/<order number>` | DELETE | JWT in header | status |
+
+
+
+<br>
+
+**Example Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Order deleted successfully"
+}
+```
+**Example Error Response**
+
+```json
+{
+  "status": "fail",
+  "error": {
+    "statusCode": 404,
+    "status": "fail",
+    "isOperational": true
+  },
+  "message": "Order not found",
+  "stack": {STACK_DATA}
+}
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Delete an Order by ID | `/orders/<userId>` | GET | JWT in header | status |
+
+
+
+<br>
+
+
+**Example Successful Response**
+NB: Shortened for brevity
+```json
+{
+  "success": true,
+  "orders": [
+    {
+      "_id": "67650208ea44fda84d617649",
+      "userId": {
+        "_id": "6764223aea44fda84d617474",
+        "email": "bradx32@hotmail.com",
+        "profile": {
+          "firstName": "Brad",
+          "lastName": "Richmond",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a8568c",
+            "name": "Galactaphonic",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "67650208ea44fda84d61764a"
+        },
+        {
+          "productId": {
+            "_id": "675aeba67d85749f98a856ba",
+            "name": "Technics SL-1200G",
+            "price": 3999,
+            "type": "turntable",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 3999,
+          "_id": "67650208ea44fda84d61764b"
+        }
+      ],
+      "total": 4038.99,
+      "status": "payment received",
+      "createdAt": "2024-12-20T05:35:04.430Z",
+      "updatedAt": "2024-12-20T08:35:09.585Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+    {
+      "_id": "67651fe77770167a05c61ed5",
+      "userId": {
+        "_id": "6764223aea44fda84d617474",
+        "email": "bradx32@hotmail.com",
+        "profile": {
+          "firstName": "Brad",
+          "lastName": "Richmond",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a8568c",
+            "name": "Galactaphonic",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "67651fe77770167a05c61ed6"
+        },
+        {
+          "productId": {
+            "_id": "675aeba67d85749f98a856ba",
+            "name": "Technics SL-1200G",
+            "price": 3999,
+            "type": "turntable",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 3999,
+          "_id": "67651fe77770167a05c61ed7"
+        },
+        {
+          "productId": {
+            "_id": "675ae2cd7d85749f98a8568f",
+            "name": "All Eyez on Me",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 2,
+          "price": 39.99,
+          "_id": "67651fe77770167a05c61ed8"
+        }
+      ],
+      "total": 4118.97,
+      "status": "pending",
+      "createdAt": "2024-12-20T07:42:31.493Z",
+      "updatedAt": "2024-12-20T07:42:31.493Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    }
+  ]
+}...
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get orders by status | `/orders?status=<status>` | GET | JWT in header | status |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| status | pending |
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "status": "success",
+  "orders": [
+    {
+      "_id": "6764ff3aea44fda84d61759d",
+      "userId": {
+        "_id": "6764ff07ea44fda84d617575",
+        "email": "reecewdoyle@gmail.com",
+        "profile": {
+          "firstName": "Reece",
+          "lastName": "Doyle",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ae2cd7d85749f98a85690",
+            "name": "Ready to Die",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "6764ff3aea44fda84d61759e"
+        },
+        {
+          "productId": {
+            "_id": "675ae2cd7d85749f98a8568f",
+            "name": "All Eyez on Me",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "6764ff3aea44fda84d61759f"
+        }
+      ],
+      "total": 79.98,
+      "status": "pending",
+      "createdAt": "2024-12-20T05:23:06.498Z",
+      "updatedAt": "2024-12-20T05:23:06.498Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+    {
+      "_id": "67650030ea44fda84d6175c0",
+      "userId": {
+        "_id": "6764ff07ea44fda84d617575",
+        "email": "reecewdoyle@gmail.com",
+        "profile": {
+          "firstName": "Reece",
+          "lastName": "Doyle",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ae2cd7d85749f98a85690",
+            "name": "Ready to Die",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "67650030ea44fda84d6175c1"
+        },
+        {
+          "productId": {
+            "_id": "675ae2cd7d85749f98a8568f",
+            "name": "All Eyez on Me",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "67650030ea44fda84d6175c2"
+        }
+      ],
+      "total": 79.98,
+      "status": "pending",
+      "createdAt": "2024-12-20T05:27:12.143Z",
+      "updatedAt": "2024-12-20T05:27:12.143Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+  ]
+}...
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get orders by date range | `/orders?start-date=<start-date>&end-date=<end-date>` | GET | JWT in header | status |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| start-date | 2024-01-01 |
+| end-date | 2024-12-31 |
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "status": "success",
+  "orders": [
+    {
+      "_id": "6762d9d5a2c5237a0d528c76",
+      "userId": {
+        "_id": "675be0befe6e8441a443e11b",
+        "email": "damian@example.com",
+        "profile": {
+          "firstName": "Damian",
+          "lastName": "Petrov",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85685",
+            "name": "Abbey Road",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 8,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c77"
+        },
+        {
+          "productId": {
+            "_id": "675ad9b77d85749f98a85686",
+            "name": "Thriller",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 2,
+          "price": 39.99,
+          "_id": "6762d9d5a2c5237a0d528c78"
+        }
+      ],
+      "total": 399.9,
+      "status": "shipped",
+      "createdAt": "2024-12-18T14:19:01.879Z",
+      "updatedAt": "2024-12-18T14:19:01.879Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+  ]
+}  
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get orders by status and date range | `/orders?status=<status>&start-date=<start-date>&end-date=<end-date>` | GET | JWT in header | status |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| status | pending |
+| start-date | 2024-01-01 |
+| end-date | 2024-12-31 |
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "status": "success",
+  "orders": [
+    {
+      "_id": "6764ff3aea44fda84d61759d",
+      "userId": {
+        "_id": "6764ff07ea44fda84d617575",
+        "email": "reecewdoyle@gmail.com",
+        "profile": {
+          "firstName": "Reece",
+          "lastName": "Doyle",
+          "address": {
+            "street": "123 Example Street",
+            "city": "Melbourne",
+            "state": "Victoria",
+            "postalCode": "3000",
+            "country": "Australia"
+          },
+          "phoneNumber": "+61 400 123 456"
+        }
+      },
+      "products": [
+        {
+          "productId": {
+            "_id": "675ae2cd7d85749f98a85690",
+            "name": "Ready to Die",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "6764ff3aea44fda84d61759e"
+        },
+        {
+          "productId": {
+            "_id": "675ae2cd7d85749f98a8568f",
+            "name": "All Eyez on Me",
+            "price": 39.99,
+            "type": "vinyl",
+            "thumbnail": ""
+          },
+          "quantity": 1,
+          "price": 39.99,
+          "_id": "6764ff3aea44fda84d61759f"
+        }
+      ],
+      "total": 79.98,
+      "status": "pending",
+      "createdAt": "2024-12-20T05:23:06.498Z",
+      "updatedAt": "2024-12-20T05:23:06.498Z",
+      "shippingAddress": {
+        "street": "123 Example Street",
+        "city": "Melbourne",
+        "state": "Victoria",
+        "postalCode": "3000",
+        "country": "Australia"
+      }
+    },
+  ]
+}
+```
+
+
+
 
 
 ***
