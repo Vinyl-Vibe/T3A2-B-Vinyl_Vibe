@@ -1810,7 +1810,7 @@ NB: shortened for brevity
 
 | FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
 |----------|------|--------|----------------|------------------|
-| Get orders by status and date range | `/orders?status=<status>&start-date=<start-date>&end-date=<end-date>` | GET | JWT in header | status |
+| Get orders by status and date range | `/orders?status=<status>&start-date=<start-date>&end-date=<end-date>` | GET | JWT in header | status, start-date, end-date |
 
 
 <br>
@@ -1893,10 +1893,843 @@ NB: shortened for brevity
   ]
 }
 ```
+## Products
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Search Products by type | `/products?type=<type>` | GET | JWT in header | type |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| type | vinyl |
+
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": [
+          "Speak to Me",
+          "Breathe",
+          "On the Run",
+          "Time",
+          "The Great Gig in the Sky",
+          "Money",
+          "Us and Them",
+          "Any Colour You Like",
+          "Brain Damage",
+          "Eclipse"
+        ],
+        "artist": "Pink Floyd",
+        "genre": "Progressive Rock",
+        "releaseDate": "1973-03-01T00:00:00.000Z"
+      },
+      "_id": "675ad9b77d85749f98a85684",
+      "name": "The Dark Side of the Moon VOL3",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A groundbreaking concept album that blends psychedelic rock and atmospheric soundscapes, exploring themes of time, greed, and human experience.",
+      "stock": 43,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-21T22:34:49.982Z",
+      "thumbnail": "https://res.cloudinary.com/dmvgqayll/image/authenticated/s--3wnztboS--/v1734820486/lbsh6xltw7naqjlukjt8.png",
+      "brand": ""
+    },
+    {
+      "albumInfo": {
+        "trackList": [
+          "Come Together",
+          "Something",
+          "Maxwell's Silver Hammer",
+          "Oh! Darling",
+          "Octopus's Garden",
+          "I Want You (She's So Heavy)",
+          "Here Comes the Sun",
+          "Because",
+          "You Never Give Me Your Money",
+          "Sun King",
+          "Mean Mr. Mustard",
+          "Polythene Pam",
+          "She Came in Through the Bathroom Window",
+          "Golden Slumbers",
+          "Carry That Weight",
+          "The End",
+          "Her Majesty"
+        ],
+        "artist": "The Beatles",
+        "genre": "Rock",
+        "releaseDate": "1969-09-26T00:00:00.000Z"
+      },
+      "brand": null,
+      "_id": "675ad9b77d85749f98a85685",
+      "name": "Abbey Road",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "The Beatles' final studio masterpiece, featuring iconic harmonies, innovative production, and timeless classics that showcase their creative peak.",
+      "stock": 27,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z",
+      "thumbnail": ""
+    },
+  ]
+}
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Search Products by price range | `/products?price-min=<price-min>&price-max=<price-max>` | GET | JWT in header | price-min, price-max |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| price-min | 20 |
+| price-max | 50 |
+
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": [
+          "Speak to Me",
+          "Breathe",
+          "On the Run",
+          "Time",
+          "The Great Gig in the Sky",
+          "Money",
+          "Us and Them",
+          "Any Colour You Like",
+          "Brain Damage",
+          "Eclipse"
+        ],
+        "artist": "Pink Floyd",
+        "genre": "Progressive Rock",
+        "releaseDate": "1973-03-01T00:00:00.000Z"
+      },
+      "_id": "675ad9b77d85749f98a85684",
+      "name": "The Dark Side of the Moon VOL3",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A groundbreaking concept album that blends psychedelic rock and atmospheric soundscapes, exploring themes of time, greed, and human experience.",
+      "stock": 43,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-21T22:34:49.982Z",
+      "thumbnail": "https://res.cloudinary.com/dmvgqayll/image/authenticated/s--3wnztboS--/v1734820486/lbsh6xltw7naqjlukjt8.png",
+      "brand": ""
+    },
+    {
+      "albumInfo": {
+        "trackList": [
+          "Come Together",
+          "Something",
+          "Maxwell's Silver Hammer",
+          "Oh! Darling",
+          "Octopus's Garden",
+          "I Want You (She's So Heavy)",
+          "Here Comes the Sun",
+          "Because",
+          "You Never Give Me Your Money",
+          "Sun King",
+          "Mean Mr. Mustard",
+          "Polythene Pam",
+          "She Came in Through the Bathroom Window",
+          "Golden Slumbers",
+          "Carry That Weight",
+          "The End",
+          "Her Majesty"
+        ],
+        "artist": "The Beatles",
+        "genre": "Rock",
+        "releaseDate": "1969-09-26T00:00:00.000Z"
+      },
+      "brand": null,
+      "_id": "675ad9b77d85749f98a85685",
+      "name": "Abbey Road",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "The Beatles' final studio masterpiece, featuring iconic harmonies, innovative production, and timeless classics that showcase their creative peak.",
+      "stock": 27,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z",
+      "thumbnail": ""
+    },
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Search in-stock Products | `/products?price-min=products?in-stock=true` | GET | JWT in header | stock |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| in-stock | true |
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": [
+          "Speak to Me",
+          "Breathe",
+          "On the Run",
+          "Time",
+          "The Great Gig in the Sky",
+          "Money",
+          "Us and Them",
+          "Any Colour You Like",
+          "Brain Damage",
+          "Eclipse"
+        ],
+        "artist": "Pink Floyd",
+        "genre": "Progressive Rock",
+        "releaseDate": "1973-03-01T00:00:00.000Z"
+      },
+      "_id": "675ad9b77d85749f98a85684",
+      "name": "The Dark Side of the Moon VOL3",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A groundbreaking concept album that blends psychedelic rock and atmospheric soundscapes, exploring themes of time, greed, and human experience.",
+      "stock": 43,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-21T22:34:49.982Z",
+      "thumbnail": "https://res.cloudinary.com/dmvgqayll/image/authenticated/s--3wnztboS--/v1734820486/lbsh6xltw7naqjlukjt8.png",
+      "brand": ""
+    },
+    {
+      "albumInfo": {
+        "trackList": [
+          "Come Together",
+          "Something",
+          "Maxwell's Silver Hammer",
+          "Oh! Darling",
+          "Octopus's Garden",
+          "I Want You (She's So Heavy)",
+          "Here Comes the Sun",
+          "Because",
+          "You Never Give Me Your Money",
+          "Sun King",
+          "Mean Mr. Mustard",
+          "Polythene Pam",
+          "She Came in Through the Bathroom Window",
+          "Golden Slumbers",
+          "Carry That Weight",
+          "The End",
+          "Her Majesty"
+        ],
+        "artist": "The Beatles",
+        "genre": "Rock",
+        "releaseDate": "1969-09-26T00:00:00.000Z"
+      },
+      "brand": null,
+      "_id": "675ad9b77d85749f98a85685",
+      "name": "Abbey Road",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "The Beatles' final studio masterpiece, featuring iconic harmonies, innovative production, and timeless classics that showcase their creative peak.",
+      "stock": 27,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z",
+      "thumbnail": ""
+    },
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Search out-of-stock Products | `/products?price-min=products?in-stock=false` | GET | JWT in header | stock |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| in-stock | false |
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": []
+      },
+      "thumbnail": "",
+      "_id": "676127e8303f21258a4e6687",
+      "name": "Sticker",
+      "price": 1.99,
+      "type": "merch",
+      "description": "Pack of 10 stickers ",
+      "stock": 0,
+      "images": [],
+      "brand": "Vinyl Vibe",
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z"
+    }
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Sort and order Products | `/products?sort=price&order=desc` | GET | JWT in header | sort, order |
+
+
+<br>
+
+**Example Request Body**
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| sort | price |
+| order | desc |
+
+<br>
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": [
+          "Waiting for the Sun",
+          "My Happiness",
+          "The Metre",
+          "Like a Dog",
+          "Odyssey #5",
+          "Up & Down & Back Again",
+          "My Kind of Scene",
+          "These Days",
+          "We Should Be Together Now",
+          "Thrilloilogy",
+          "Whatever Makes You Happy"
+        ],
+        "artist": "Powderfinger",
+        "genre": "Alternative Rock",
+        "releaseDate": "2000-09-04T00:00:00.000Z"
+      },
+      "brand": null,
+      "_id": "675af1507d85749f98a856cf",
+      "name": "Odyssey Number Five",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A landmark album from Powderfinger, featuring polished rock anthems and deeply emotive tracks.",
+      "stock": 22,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z",
+      "thumbnail": ""
+    },
+    {
+      "albumInfo": {
+        "trackList": [
+          "Love's in Need of Love Today",
+          "Have a Talk with God",
+          "Village Ghetto Land",
+          "Contusion",
+          "Sir Duke",
+          "I Wish",
+          "Knocks Me Off My Feet",
+          "Pastime Paradise",
+          "Summer Soft",
+          "Ordinary Pain",
+          "Isn't She Lovely",
+          "Joy Inside My Tears",
+          "Black Man",
+          "Ngiculela - Es Una Historia - I Am Singing",
+          "If It's Magic",
+          "As",
+          "Another Star"
+        ],
+        "artist": "Stevie Wonder",
+        "genre": "Soul",
+        "releaseDate": "1976-09-28T00:00:00.000Z"
+      },
+      "brand": null,
+      "_id": "675af5387d85749f98a856db",
+      "name": "Songs in the Key of Life",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A double album filled with joyful, introspective, and musically brilliant tracks showcasing Stevie Wonder's genius.",
+      "stock": 22,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z",
+      "thumbnail": ""
+    },
+    {
+      "albumInfo": {
+        "trackList": [
+          "Ole Man Trouble",
+          "Respect",
+          "Change Gonna Come",
+          "Down in the Valley",
+          "I've Been Loving You Too Long",
+          "Shake",
+          "My Girl",
+          "Wonderful World",
+          "Rock Me Baby",
+          "Satisfaction",
+          "You Don't Miss Your Water"
+        ],
+        "artist": "Otis Redding",
+        "genre": "Soul",
+        "releaseDate": "1965-09-15T00:00:00.000Z"
+      },
+      "brand": null,
+      "_id": "675af5387d85749f98a856da",
+      "name": "Otis Blue",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A soulful masterpiece featuring Otis Redding's heartfelt vocals and timeless renditions of soul classics.",
+      "stock": 15,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z",
+      "thumbnail": ""
+    },
+    {
+      "albumInfo": {
+        "trackList": [
+          "Chain of Fools",
+          "Money Won't Change You",
+          "People Get Ready",
+          "Niki Hoeky",
+          "(You Make Me Feel Like) A Natural Woman",
+          "Since You've Been Gone",
+          "Good to Me As I Am to You",
+          "Come Back Baby",
+          "Groovin'",
+          "Ain't No Way"
+        ],
+        "artist": "Aretha Franklin",
+        "genre": "Soul",
+        "releaseDate": "1968-01-22T00:00:00.000Z"
+      },
+      "brand": null,
+      "_id": "675af5387d85749f98a856d9",
+      "name": "Lady Soul",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A powerful and iconic soul album showcasing Aretha Franklin's unmatched vocal prowess and emotional depth.",
+      "stock": 18,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z",
+      "thumbnail": ""
+    },
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all Products with pagination | `/productsproducts?page=<page>&limit=<limit>` | GET | JWT in header | stock |
+
+**Params**
+| NAME | VALUE |
+|------|------|
+| page | 1 |
+| limit | 20 |
+
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": [
+          "Speak to Me",
+          "Breathe",
+          "On the Run",
+          "Time",
+          "The Great Gig in the Sky",
+          "Money",
+          "Us and Them",
+          "Any Colour You Like",
+          "Brain Damage",
+          "Eclipse"
+        ],
+        "artist": "Pink Floyd",
+        "genre": "Progressive Rock",
+        "releaseDate": "1973-03-01T00:00:00.000Z"
+      },
+      "_id": "675ad9b77d85749f98a85684",
+      "name": "The Dark Side of the Moon VOL3",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A groundbreaking concept album that blends psychedelic rock and atmospheric soundscapes, exploring themes of time, greed, and human experience.",
+      "stock": 43,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-21T22:34:49.982Z",
+      "thumbnail": "https://res.cloudinary.com/dmvgqayll/image/authenticated/s--3wnztboS--/v1734820486/lbsh6xltw7naqjlukjt8.png",
+      "brand": ""
+    },
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get all Products | `/products` | GET | JWT in header | stock |
 
 
 
 
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": [
+          "Speak to Me",
+          "Breathe",
+          "On the Run",
+          "Time",
+          "The Great Gig in the Sky",
+          "Money",
+          "Us and Them",
+          "Any Colour You Like",
+          "Brain Damage",
+          "Eclipse"
+        ],
+        "artist": "Pink Floyd",
+        "genre": "Progressive Rock",
+        "releaseDate": "1973-03-01T00:00:00.000Z"
+      },
+      "_id": "675ad9b77d85749f98a85684",
+      "name": "The Dark Side of the Moon VOL3",
+      "price": 39.99,
+      "type": "vinyl",
+      "description": "A groundbreaking concept album that blends psychedelic rock and atmospheric soundscapes, exploring themes of time, greed, and human experience.",
+      "stock": 43,
+      "images": [],
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-21T22:34:49.982Z",
+      "thumbnail": "https://res.cloudinary.com/dmvgqayll/image/authenticated/s--3wnztboS--/v1734820486/lbsh6xltw7naqjlukjt8.png",
+      "brand": ""
+    },
+  ]
+}
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Get by Products product ID | `/products/{{product_id}}` | GET | JWT in header | null |
+
+**Example Request URL**
+
+http://{{base_url}}/products/676127e8303f21258a4e6687
+
+**Example Success Response**
+NB: shortened for brevity
+
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "albumInfo": {
+        "trackList": []
+      },
+      "thumbnail": "",
+      "_id": "676127e8303f21258a4e6687",
+      "name": "Sticker",
+      "price": 1.99,
+      "type": "merch",
+      "description": "Pack of 10 stickers ",
+      "stock": 0,
+      "images": [],
+      "brand": "Vinyl Vibe",
+      "createdAt": "2024-12-06T11:36:35.569Z",
+      "updatedAt": "2024-12-06T11:36:35.569Z"
+    }
+  ]
+}
+```
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Create a product | `/products` | POST | JWT in header | null |
+
+**Example Request Body**
+
+```json
+{
+  "name": "TEST PRODUCT",
+  "description": "",
+  "price": 39.99,
+  "type": "vinyl",
+  "albumInfo": {
+    "artist": "Nirvana",
+    "genre": "Rock",
+    "trackList": ["Track 1", "Track 2"],
+    "releaseDate": "2022-02-12T00:00:00Z"
+  },
+  "stock": 50,
+  "thumbnail": "https://google.com",
+  "images": ["https://google.com", "https://apple.com"]
+}
+```
+
+**Example Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Product created successfully",
+  "product": {
+    "name": "TEST PRODUCT",
+    "description": "",
+    "price": 39.99,
+    "type": "vinyl",
+    "albumInfo": {
+      "artist": "Nirvana",
+      "genre": "Rock",
+      "trackList": [
+        "Track 1",
+        "Track 2"
+      ],
+      "releaseDate": "2022-02-12T00:00:00.000Z"
+    },
+    "stock": 50,
+    "images": [
+      "https://google.com",
+      "https://apple.com"
+    ],
+    "thumbnail": "https://google.com",
+    "brand": null,
+    "_id": "67675ea515a2cfb23a452e8c",
+    "createdAt": "2024-12-22T00:34:45.666Z",
+    "updatedAt": "2024-12-22T00:34:45.666Z"
+  }
+}
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Update a product | `/products/{{product_id}}` | POST | JWT in header | null |
+
+<br>
+
+**Example Request Body**
+
+```json
+{
+  "name": "Klipsch R-51M Bookshelf Speakers",
+  "price": 199.99,
+  "type": "accessory",
+  "stock": 12
+}
+```
+
+
+**Example Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Product updated successfully",
+  "product": {
+    "albumInfo": {
+      "trackList": []
+    },
+    "_id": "675ae93b7d85749f98a856af",
+    "name": "Klipsch R-51M Bookshelf Speakers",
+    "price": 199.99,
+    "type": "accessory",
+    "description": "A compact bookshelf speaker delivering dynamic sound with crisp highs and powerful bass, perfect for audiophiles.",
+    "stock": 12,
+    "images": [],
+    "brand": "Klipsch",
+    "createdAt": "2024-12-06T11:36:35.569Z",
+    "updatedAt": "2024-12-22T00:38:59.964Z",
+    "thumbnail": ""
+  }
+}
+```
+
+<br>
+<br>
+
+---
+
+
+<br>
+<br>
+
+| FUNCTION | PATH | METHOD | AUTH REQUIRED | QUERY PARAMETERS |
+|----------|------|--------|----------------|------------------|
+| Delete a product by ID | `/products/{{product_id}}` | DELETE | JWT in header | null |
+
+<br>
+
+
+
+**Example Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Product deleted successfully"
+}
+```
 
 ***
 ## Testing
