@@ -1,6 +1,24 @@
 # Vinyl Vibe - T3A2-B
 
+Welcome to Vinyl Vibe, the ultimate digital extension of a beloved brick-and-mortar record store located in regional NSW, Australia. Our platform connects music enthusiasts with a curated collection of vinyl records, turntables, accessories, and merchandise while offering an intuitive and seamless shopping experience.
 
+This project showcases modern web development practices, leveraging a full-stack architecture to deliver a robust, user-friendly, and scalable application. With features like a shopping cart, order history, admin dashboard, and secure Stripe integration, Vinyl Vibe brings the charm of record collecting to the digital age.
+
+Key Highlights:
+
+- Client-Centric Design: Developed to meet the unique needs of the client, providing a comprehensive online presence for their store.
+
+- Modern Tech Stack: Built with React/Vite on the front end, a Node.js/Express backend, and MongoDB Atlas for the database, ensuring performance, scalability, and maintainability.
+
+- Seamless User Experience: An intuitive interface with features such as customer login, product browsing, and checkout for a hassle-free experience.
+
+- Secure and Reliable: Utilises industry-standard practices for deployment, data handling, and payment integration.
+
+Explore the features and development process detailed in this documentation to understand how Vinyl Vibe was built to combine functionality, usability, and scalability.
+
+This introduction highlights the purpose, features, and technical foundation of the project, making it clear and professional for both technical and non-technical audiences. Let me know if you’d like to tweak or expand this!
+
+<br>
 
 **Frontend Repo Link:** https://github.com/Vinyl-Vibe/vinyl-vibe-frontend
 
