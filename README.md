@@ -48,6 +48,8 @@ This introduction highlights the purpose, features, and technical foundation of 
 -   [Testing](#testing)
     -   [Manual (Dev & Prod)](#manual-testing)
     -   [Programmatic (Dev & Prod)](#programatic-testing-using-jest)
+    -   [New user - browsing to checkout](docs/testing/manual-testing-doc.md#3-new-user---browsing-to-checkout)
+    -   [Admin - Admin dashboard](docs/testing/manual-testing-doc.md#4-admin-testing---admin-dashboard)
 
 <br>
 

@@ -50,6 +50,8 @@ Vinyl Vibe App
 - **Status**: ❌ _Failed_
 - **Notes**: Simplify filter options and add tooltips for clarity.
 
+---
+
 #### 2. Navigating Vinyl Grading Information
 
 - **Persona**: New Vinyl Collector
@@ -111,7 +113,7 @@ Vinyl Vibe App
 
 ---
 
-#### 4. Admin testing - Admin dashboard
+### 4. Admin testing - Admin dashboard
 
 **email:** admin@example.com
 <br>
