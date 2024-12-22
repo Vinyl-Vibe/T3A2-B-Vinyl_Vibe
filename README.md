@@ -13,7 +13,7 @@ Intro/Banner image
 -   [App Functionality]()
     -   [List]()
     -   [Meets client needs]()
-    -   [Smooth UI/User Flow]()
+
 
 <br>
 
@@ -31,7 +31,7 @@ Intro/Banner image
 <br>
 
 -   [Maintainability & Scalability]()
-    -   [Item]()
+    -   [Project Directory]()
 
 <br>
 
@@ -2732,18 +2732,19 @@ NB: shortened for brevity
 }
 ```
 
-***
+<br>
+
 ## Testing
 
-***
+<br>
 
 ## Deployment
 
-***
+<br>
 
 ## Maintainability and Scalability 
 
-***
+<br>
 
 ## Project Management
 
@@ -2771,6 +2772,29 @@ Reece comes from an education background, so he volunteered to do the Presenenta
 ### Trello Breakdown
 
 We tagged tasks based on their level of difficulty, frontend/backend, MVP Features/Extended Feature
+
+Trello Board link:
+
+https://trello.com/b/lGrFjkAu/ca-ecommerce
+
+<br>
+
+---
+
+<details>
+  <summary>View Trello Board Screenshots ⬇️</summary>
+  <br>
+  <img src="docs/trello/trello-1.png" alt="Trello Board Screenshot 1" width="300">
+  <img src="docs/trello/trello-2.png" alt="Trello Board Screenshot 1" width="300">
+  <img src="docs/trello/trello-3.png" alt="Trello Board Screenshot 1" width="300">
+  <img src="docs/trello/trello-4.png" alt="Trello Board Screenshot 1" width="300">
+  <img src="docs/trello/trello-5.png" alt="Trello Board Screenshot 1" width="300">
+
+</details>
+
+---
+
+<br>
 
 ***
 
