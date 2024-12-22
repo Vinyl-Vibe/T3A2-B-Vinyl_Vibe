@@ -6,6 +6,8 @@ Intro/Banner image
 
 **Backend Repo Link:** https://github.com/Vinyl-Vibe/vinyl-vibe-backend
 
+**Deployed Website Link** https://vinylvibe.live/
+
 <br>
 
 ## Table of Contents
