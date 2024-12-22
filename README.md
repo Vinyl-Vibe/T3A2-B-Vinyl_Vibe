@@ -2962,6 +2962,42 @@ The website is live at:
 
 https://vinylvibe.live/
 
+### Environment Variable
+
+This environment configuration for Vinyl Vibe sets up a robust development setup with Node.js, specifying ports and URLs for local development, and includes secure connections to multiple services. It integrates authentication via JWT and Google OAuth, MongoDB for database operations, Stripe for payments, Resend for email services, and Cloudinary for image storage, ensuring a comprehensive and secure user experience.
+
+```javascript
+# Environment variables
+NODE_ENV=development
+PORT=3000
+FRONTEND_URL=http://localhost:5173
+
+# JWT & MongoSession - Authentication service
+JWT_SECRET=your_jwt_secret_here
+SESSION_SECRET=your_session_secret_here
+
+# Database connection
+DATABASE_URL=your_mongodb_connection_string
+
+# Resend - Email service
+RESEND_API_KEY=your_resend_api_key
+
+# Stripe - Payment service
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+
+# Google OAuth - Authentication service
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_CALLBACK_URL=http://localhost:8081/auth/google/callback
+
+# Cloudinary - Image storage service
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_UPLOAD_PRESET=your_upload_preset
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
 <br>
 
 ## Maintainability and Scalability 
