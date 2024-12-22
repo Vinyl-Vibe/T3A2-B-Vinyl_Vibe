@@ -65,7 +65,74 @@ Vinyl Vibe App
 - **Status**: ⚠️ _Partially Passed_
 - **Notes**: Consider a grading guide or simplified terms.
 
+--- 
+
+#### 3. New user - browsing to checkout
+
+**email:** user@example.com
+<br>
+**password:** password123
+<br>
+**Role:** User
+
+- **Persona**: New standard user
+- **Test Steps**:
+  1. Navigate to the homepage.
+  2. Browse Products via Vinyl, Turn tables, Accessories or Merchandise.
+  3. Add product/s to the cart.
+  4. Update product Qty's via cart options menu (located at shopping cart top right)
+  5. Test delete product from cart.
+  6. Checkout with existing products in cart.
+  7. Enter shipping information.
+  8. Payment testing with FAKE card details below:
+    - Successful payment:
+      - Card Number: 4242 4242 4242 4242 | EXP: 12/26 | CCV: 123
+    - Insucifient funds:
+      - Card Number: 4000 0000 0000 9995 | EXP: 12/26 | CCV: 123
+  9. Order confirmation page
+  10. View orders
+  11. Secect which order to view
+  12. Continue shopping
+  13. Logout
+
+- **Expected Result**:
+  - Standard user to be able to add products to cart and purchase products via stripe.
+  - User able to edit products in cart to suite changing needs.
+  - User able to view order history and check date/status/products in by order ID
+- **Actual Result**:
+  - User was able to add products to cart and purchase through the stripe gateway (using a fake card for stripe transactions).
+  - Cart update and remove options worked as expected.
+  - Viewing order history and contents worked as expected.
+- **Feedback**:
+  - Everything works as expected, could use some extra features like a back button on individual product pages
+  - 
+- **Status**: Passed
+- **Notes**: Can add back button feature to individual product page. 
+
 ---
+
+#### 4. Admin testing - Admin dashboard
+
+**email:** admin@example.com
+<br>
+**password:** password123
+<br>
+**Role:** Admin
+
+- **Persona**: Admin user
+- **Test Steps**:
+  1. Navigate to the homepage.
+  2. 
+  3. 
+- **Expected Result**:
+  - F
+  - U
+- **Actual Result**:
+  - 
+- **Feedback**:
+  - 
+- **Status**: 
+- **Notes**: 
 
 ### Summary
 
